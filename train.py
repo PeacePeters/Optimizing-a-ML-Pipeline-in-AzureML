@@ -17,11 +17,7 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 data_url = 'https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv'
 ds = Dataset.Tabular.from_delimited_files(path=data_url)
 
-
 # TODO: Split data into train and test sets.
-
-### YOUR CODE HERE ###a
-
 
 def clean_data(data):
     # Dict for cleaning data
