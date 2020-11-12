@@ -17,8 +17,6 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 data_url = 'https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv'
 ds = Dataset.Tabular.from_delimited_files(path=data_url)
 
-# TODO: Split data into train and test sets.
-
 def clean_data(data):
     # Dict for cleaning data
     months = {"jan":1, "feb":2, "mar":3, "apr":4, "may":5, "jun":6, "jul":7, "aug":8, "sep":9, "oct":10, "nov":11, "dec":12}
@@ -60,16 +58,22 @@ def main():
     run.log("Regularization Strength:", np.float(args.C))
     run.log("Max iterations:", np.int(args.max_iter))
 
-    model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
+    # loading the iris dataset
+    x, y = clean_data(ds)
+    
+    # Split data into train and test sets
+    X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, test_size=0.2, random_state=66)
+
+    model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(X_train, y_train)
 
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", np.float(accuracy))
 
 if __name__ == '__main__':
 
-    x, y = clean_data(ds)
+    
 
-    X_train, X_test, y_train, y_test = train_test_split(x_df, y_df, test_size=0.2, random_state=66)
+    
 
     run = Run.get_context()
     
