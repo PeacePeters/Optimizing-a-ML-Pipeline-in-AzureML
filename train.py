@@ -58,7 +58,7 @@ def main():
     run.log("Regularization Strength:", np.float(args.C))
     run.log("Max iterations:", np.int(args.max_iter))
 
-    # loading the iris dataset
+    # loading the dataset
     x, y = clean_data(ds)
     
     # Split data into train and test sets
@@ -66,15 +66,10 @@ def main():
 
     model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(X_train, y_train)
 
-    accuracy = model.score(x_test, y_test)
-    run.log("Accuracy", np.float(accuracy))
-
-if __name__ == '__main__':
-
-    
-
-    
-
+    accuracy = model.score(X_test, y_test)
     run = Run.get_context()
+    run.log("Accuracy", np.float(accuracy))
     
+
+if __name__ == '__main__':    
     main()
