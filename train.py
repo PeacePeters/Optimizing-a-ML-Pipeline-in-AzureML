@@ -62,14 +62,16 @@ def main():
     x, y = clean_data(ds)
     
     # Split data into train and test sets
-    X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, test_size=0.2, random_state=66)
+    X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, test_size=0.2, random_state=35)
 
     model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(X_train, y_train)
 
     accuracy = model.score(X_test, y_test)
     run = Run.get_context()
     run.log("Accuracy", np.float(accuracy))
-    
 
+    joblib.dump(LogisticRegression, 'model.joblib')
+
+    
 if __name__ == '__main__':    
     main()
