@@ -75,7 +75,7 @@ def main():
 
     # Save the trained model in the outputs folder
     os.makedirs('outputs', exist_ok=True)
-    joblib.dump(value=model, filename='outputs/hyperdrive_model.pkl')
+    joblib.dump(value=model, filename='outputs/hyperdrive_model.joblib')
 
 
     
