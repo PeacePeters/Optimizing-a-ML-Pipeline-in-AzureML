@@ -50,7 +50,7 @@ def clean_data(data):
 x, y = clean_data(ds)
 
 # Split data into train and test sets
-x_train, x_test, y_train, y_test = train_test_split(x_train, y_train, test_size=0.3, random_state=42)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=42)
     
 run = Run.get_context()
 
@@ -73,7 +73,7 @@ def main():
     run.log("Accuracy", np.float(accuracy))
 
     os.makedirs('outputs', exist_ok=True)
-    joblib.dump(LogisticRegression, 'outputs/model.joblib')
+    joblib.dump(model, 'outputs/model.joblib')
 
     
 if __name__ == '__main__':    
