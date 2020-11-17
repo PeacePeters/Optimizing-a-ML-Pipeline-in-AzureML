@@ -72,8 +72,10 @@ def main():
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", np.float(accuracy))
 
+    # Save the trained model in the outputs folder
     os.makedirs('outputs', exist_ok=True)
-    joblib.dump(model, 'outputs/model.joblib')
+    joblib.dump(value=model, filename='outputs/hyperdrive_model.pkl')
+
 
     
 if __name__ == '__main__':    
