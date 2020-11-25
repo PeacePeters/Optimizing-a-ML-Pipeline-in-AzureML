@@ -12,7 +12,7 @@ The bank marketing dataset contains data relating to a marketing campaign based 
 
 **In 1-2 sentences, explain the solution: e.g. "The best performing model was a ..."**
 
-The best performing model for the classification task was a model with an optimal primary metrics of accuracy 0.91492 that converges at 100 maximum iterations and a 0.08703 regularization strength. These are the logistic regression algorithm's parameters that very auto-tuned to achieve the best result.
+The best performing model for the classification task was a model with an optimal primary metrics of accuracy 0.91492 that converges at 100 maximum iterations and a 0.08703 regularization strength. These are the logistic regression algorithm's parameters that were auto-tuned to achieve the best result.
 
 ## Scikit-learn Pipeline
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
