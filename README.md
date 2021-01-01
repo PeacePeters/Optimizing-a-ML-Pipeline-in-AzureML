@@ -6,22 +6,18 @@ In this project, we build and optimize an Azure ML pipeline using the Python SDK
 This model is then compared to an Azure AutoML run.
 
 ## Summary
-**In 1-2 sentences, explain the problem statement: e.g "This dataset contains data about... we seek to predict..."**
 
 The bank marketing dataset contains data relating to a marketing campaign based on phone calls to clients. In this project, we aim to predict if a client will subscribe (yes/no) to the bank product - term deposit, which is the target variable y.
-
-**In 1-2 sentences, explain the solution: e.g. "The best performing model was a ..."**
 
 The best performing model for the classification task was a model with an optimal primary metrics of accuracy 0.91492 that converges at 100 maximum iterations and a 0.08703 regularization strength. These are the logistic regression algorithm's parameters that were auto-tuned to achieve the best result.
 
 ## Scikit-learn Pipeline
-**Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
 
 Scikit pipeline constitute a train.py script which has the training data that was downloaded using the url link, an unregistered tabular dataset was created using the from_delimited_files() method, and then data preprocessing was also performed. The training algorithm used is the Logistic Regression algorithm with parameters C and max_iter, and the goal is to maximize primary metric "accuracy" by applying automatic hyperparameter tuning using Hyperdrive.
 
 In order to define the search space for hyperparameter tuning, a choice among these discrete values for max_iter (25, 50, 100, 200) was made and C has a uniform distribution value ranging from a minimum value (0.08) and maximum vaule (0.1). Then a random sampling method randomly selects one of these hyperparameter values be it choice or uniform. For hyperparameter policy, a bandit early termination policy was chosen to avoid premature termination of first 5 runs and then subsequently the policy was applied every 2 iterations to terminate runs whose primary metric fell outside of the top 10%. Finally, HyperDriveConfig was created using the SKLearn estimator, hyperparameter sampler, and policy. This produced a trained model with hyperparameters optimized by HyperDrive
 
-**What are the benefits of the parameter sampler you chose?**
+**Benefits of the parameter sampler chosen**
 
 Random sampler has the advantage of supporting early termination of low performance runs for both discrete and continuous hyperparameters.
 
