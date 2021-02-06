@@ -7,7 +7,7 @@ This model is then compared to an Azure AutoML run.
 
 ## Summary
 
-The bank marketing dataset contains data relating to a marketing campaign based on phone calls to clients. In this project, we aim to predict if a client will subscribe (yes/no) to the bank product - term deposit, which is the target variable y.
+The [Bank Marketing dataset](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) contains data relating to a marketing campaign based on phone calls to clients. In this project, we aim to predict if a client will subscribe (yes/no) to the bank product - term deposit, which is the target variable y.
 
 The best performing model for the classification task was a model with an optimal primary metrics of accuracy 0.91492 that converges at 100 maximum iterations and a 0.08703 regularization strength. These are the logistic regression algorithm's parameters that were auto-tuned to achieve the best result.
 
