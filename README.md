@@ -5,6 +5,9 @@ This project is part of the Udacity Azure ML Nanodegree.
 In this project, we build and optimize an Azure ML pipeline using the Python SDK and a provided Scikit-learn model.
 This model is then compared to an Azure AutoML run.
 
+## Architectural Diagram
+![image](https://user-images.githubusercontent.com/68206315/115319609-1d9e6780-a178-11eb-815d-c816dcb02f36.png)
+
 ## Summary
 
 The [Bank Marketing dataset](https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv) contains data relating to a marketing campaign based on phone calls to clients. In this project, we aim to predict if a client will subscribe (yes/no) to the bank product - term deposit, which is the target variable y.
@@ -35,4 +38,5 @@ The AutoML model with an accuracy of 0.91671 outperformed the HyperDrive optimiz
 
 ## Future work
 
-Some key areas that can bring about a higher quality prediction is trying different combinations of hyperparameters, increasing the maximum total runs for the HyperDrive, etc. For AutoML, training the model on a remote compute where the full set of features can be used will result in better model aacuracy.
+1. Some key areas that can bring about a higher quality prediction is trying different combinations of hyperparameters, increasing the maximum total runs for the HyperDrive, etc. 
+2. For AutoML, training the model on a remote compute where the full set of features can be used will result in better model aacuracy.
