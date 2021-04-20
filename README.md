@@ -6,7 +6,8 @@ In this project, we build and optimize an Azure ML pipeline using the Python SDK
 This model is then compared to an Azure AutoML run.
 
 ## Architectural Diagram
-![image](https://user-images.githubusercontent.com/68206315/115319609-1d9e6780-a178-11eb-815d-c816dcb02f36.png)
+
+![image](https://user-images.githubusercontent.com/68206315/115319967-d6fd3d00-a178-11eb-9c95-5e6bf5eca35e.png)
 
 ## Summary
 
